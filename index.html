@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lic. Anel Bradiel — Abogado & Consultor de Seguridad</title>
+  <meta name="description" content="Abogado litigante (civil, penal, migración) y consultor de seguridad física. Asesoría presencial y online.">
+  <style>
+    :root { --bg:#0f1115; --fg:#e9eef5; --muted:#9aa4b2; --card:#151924; --accent:#4ea1ff; }
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--fg);line-height:1.5}
+    header{padding:32px 20px;text-align:center}
+    .container{max-width:980px;margin:0 auto;padding:0 20px}
+    .card{background:var(--card);border:1px solid #232a38;border-radius:14px;padding:24px;margin:16px 0}
+    h1{margin:0 0 6px 0;font-size:clamp(24px,4vw,36px)}
+    h2{margin:0 0 10px 0;font-size:clamp(18px,3vw,24px)}
+    p{margin:8px 0}
+    .muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media (min-width:800px){ .grid{grid-template-columns:1fr 1fr} }
+    .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+    a.btn{padding:12px 16px;border-radius:10px;text-decoration:none;background:var(--accent);color:#00152c;font-weight:600;display:inline-block}
+    a.btn.outline{background:transparent;border:1px solid var(--accent);color:var(--fg)}
+    footer{padding:32px 20px;text-align:center;color:var(--muted)}
+    .lang-switch{display:flex;gap:10px;justify-content:center;margin-top:10px}
+    .lang-switch button{background:#1b2230;border:1px solid #2a3242;color:var(--fg);padding:8px 12px;border-radius:8px;cursor:pointer}
+    .lang-switch button.active{border-color:var(--accent)}
+    [data-lang="en"]{display:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 data-lang="es">Lic. Anel Bradiel</h1>
+      <h1 data-lang="en">Attorney Anel Bradiel</h1>
+      <p class="muted" data-lang="es">Abogado litigante (Civil, Penal, Migración) & Consultor de Seguridad Física.</p>
+      <p class="muted" data-lang="en">Trial lawyer (Civil, Criminal, Immigration) & Physical Security Consultant.</p>
+      <div class="lang-switch">
+        <button id="btn-es" class="active">ES</button>
+        <button id="btn-en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card grid">
+      <div>
+        <h2 data-lang="es">Servicios Legales</h2>
+        <h2 data-lang="en">Legal Services</h2>
+        <p data-lang="es">Representación y asesoría en <b>Derecho Civil</b>, <b>Penal</b> y <b>Trámites Migratorios</b>. Atención presencial y <b>asesoría en línea</b> si lo requiere.</p>
+        <p data-lang="en">Representation and counsel in <b>Civil</b>, <b>Criminal</b>, and <b>Immigration</b> law. In-person service and <b>online advisory</b> upon request.</p>
+      </div>
+      <div>
+        <h2 data-lang="es">Consultoría en Seguridad</h2>
+        <h2 data-lang="en">Security Consulting</h2>
+        <p data-lang="es">Ex Director de Policía contra el Crimen Organizado; experiencia nacional e internacional (Embajada de EE. UU., minería). Diseño de planes, auditorías, KPIs y capacitación.</p>
+        <p data-lang="en">Former Police Director for Organized Crime; national and international experience (U.S. Embassy, mining). Security plans, audits, KPIs, and training.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 data-lang="es">Contacto</h2>
+      <h2 data-lang="en">Contact</h2>
+      <p data-lang="es"><b>Ciudad de Panamá</b> • Casa 56</p>
+      <p data-lang="en"><b>Panama City</b> • Casa 56</p>
+      <div class="btns">
+        <a class="btn" href="https://wa.me/50762491412" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn outline" href="tel:+50762491412">+507 6249-1412</a>
+        <a class="btn outline" href="mailto:Anel.bradiel@gmail.com?subject=Consulta%20legal%20o%20seguridad">Email</a>
+      </div>
+      <p class="muted" data-lang="es" style="margin-top:12px">Licenciado en Derecho. Asesoría honesta, estratégica y confidencial.</p>
+      <p class="muted" data-lang="en" style="margin-top:12px">Licensed attorney. Honest, strategic and confidential counsel.</p>
+    </section>
+
+    <section class="card">
+      <h2 data-lang="es">Aviso</h2>
+      <h2 data-lang="en">Notice</h2>
+      <p data-lang="es">Este sitio es una página estática publicada con GitHub Pages.</p>
+      <p data-lang="en">This is a static site published with GitHub Pages.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>&copy; <span id="y"></span> Anel Bradiel</small>
+    </div>
+  </footer>
+
+  <script>
+    const y=document.getElementById('y'); y.textContent = new Date().getFullYear();
+    const show = lang => {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
+      });
+      document.getElementById('btn-es').classList.toggle('active', lang==='es');
+      document.getElementById('btn-en').classList.toggle('active', lang==='en');
+    };
+    document.getElementById('btn-es').onclick=()=>show('es');
+    document.getElementById('btn-en').onclick=()=>show('en');
+  </script>
+</body>
+</html>
