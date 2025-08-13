@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lic. Anel Bradiel — Abogado & Consultor de Seguridad</title>
   <meta name="description" content="Abogado litigante (civil, penal, migración) y consultor de seguridad física. Asesoría presencial y online.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Lic. Anel Bradiel — Abogado & Consultor de Seguridad">
+  <meta property="og:description" content="Consultas legales (Civil, Penal, Migración) y consultoría en Seguridad Física. Atención presencial y online.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anelariel.github.io/">
+  <meta name="twitter:card" content="summary">
   <style>
     :root { --bg:#0f1115; --fg:#e9eef5; --muted:#9aa4b2; --card:#151924; --accent:#4ea1ff; }
     *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--fg);line-height:1.5}
@@ -34,9 +40,9 @@
       <h1 data-lang="en">Attorney Anel Bradiel</h1>
       <p class="muted" data-lang="es">Abogado litigante (Civil, Penal, Migración) & Consultor de Seguridad Física.</p>
       <p class="muted" data-lang="en">Trial lawyer (Civil, Criminal, Immigration) & Physical Security Consultant.</p>
-      <div class="lang-switch">
-        <button id="btn-es" class="active">ES</button>
-        <button id="btn-en">EN</button>
+      <div class="lang-switch" aria-label="Cambiar idioma / Change language">
+        <button id="btn-es" class="active" aria-pressed="true">ES</button>
+        <button id="btn-en" aria-pressed="false">EN</button>
       </div>
     </div>
   </header>
@@ -63,9 +69,9 @@
       <p data-lang="es"><b>Ciudad de Panamá</b> • Casa 56</p>
       <p data-lang="en"><b>Panama City</b> • Casa 56</p>
       <div class="btns">
-        <a class="btn" href="https://wa.me/50762491412" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn" href="https://wa.me/50762491412?text=Hola%20Lic.%20Bradiel%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta." target="_blank" rel="noopener">WhatsApp</a>
         <a class="btn outline" href="tel:+50762491412">+507 6249-1412</a>
-        <a class="btn outline" href="mailto:Anel.bradiel@gmail.com?subject=Consulta%20legal%20o%20seguridad">Email</a>
+        <a class="btn outline" href="mailto:Anel.bradiel@gmail.com?subject=Consulta%20legal%20o%20seguridad&body=Hola%20Lic.%20Bradiel%2C%20necesito%20asesor%C3%ADa%20en...">Email</a>
       </div>
       <p class="muted" data-lang="es" style="margin-top:12px">Licenciado en Derecho. Asesoría honesta, estratégica y confidencial.</p>
       <p class="muted" data-lang="en" style="margin-top:12px">Licensed attorney. Honest, strategic and confidential counsel.</p>
@@ -93,6 +99,8 @@
       });
       document.getElementById('btn-es').classList.toggle('active', lang==='es');
       document.getElementById('btn-en').classList.toggle('active', lang==='en');
+      document.getElementById('btn-es').setAttribute('aria-pressed', lang==='es');
+      document.getElementById('btn-en').setAttribute('aria-pressed', lang==='en');
     };
     document.getElementById('btn-es').onclick=()=>show('es');
     document.getElementById('btn-en').onclick=()=>show('en');
